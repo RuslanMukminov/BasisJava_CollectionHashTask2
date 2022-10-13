@@ -5,9 +5,11 @@ import java.util.Set;
 
 public class WordsChecker {
     protected String text;
+    protected Set<String> set;
 
     public WordsChecker(String text) {
         this.text = text;
+        set = new HashSet<>(textSplit());
     }
 
     public Collection<String> textSplit() {
@@ -15,7 +17,6 @@ public class WordsChecker {
     }
 
     public boolean hasWord(String word) {
-        Set<String> set = new HashSet<>(textSplit());
         return set.contains(word);
     }
 }
